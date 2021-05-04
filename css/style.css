@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+.buttons {
+  width: 200px;
+  height: 270px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttons__wrapper {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 5px;
+  filter: url("#shake0") blur(1px);
+}
+
+button,
+.buttons__label {
+  background-color: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons__label {
+  line-height: 50px;
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #fff;
+}
+
+button {
+  background-color: #000;
+  outline: none;
+  border: none;
+}
+
+.buttons__wrapper:hover {
+  box-shadow: 0 0 2px #000;
+  cursor: pointer;
+  transform: scale(1.8);
+  z-index: 100;
+  animation: distort .5s linear infinite;
+}
+
+.buttons__wrapper:hover .buttons__label {
+  background-color: #fff;
+  color: #000;
+}
+
+@keyframes distort {
+  0% { filter: url("#shake0"); }
+  25% { filter: url("#shake1"); }
+  50% { filter: url("#shake2"); }
+  75% { filter: url("#shake3"); }
+  100% { filter: url("#shake4"); }
+}
